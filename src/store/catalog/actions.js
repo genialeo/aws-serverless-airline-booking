@@ -181,6 +181,7 @@ export async function fetchByFlightId({ commit, rootGetters }, { flightId }) {
     // })
 
     // [Mock-Example]
+    /*
     const { data: flightData } = await axios.get(window.Config.CATALOG_FETCH, {
       params: {
         id: flight.id
@@ -190,11 +191,11 @@ export async function fetchByFlightId({ commit, rootGetters }, { flightId }) {
         'Content-Type': 'application/json'
       }
     })
-
+    */
     console.info('Flight received from Catalog...')
     console.log(flightData)
 
-    const flight = new Flight(flightData)
+    const flight = new Flight()
     commit('SET_LOADER', false)
     console.groupEnd()
     return flight
